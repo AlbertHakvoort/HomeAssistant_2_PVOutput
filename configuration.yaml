@@ -1,0 +1,2 @@
+shell_command:
+   pvoutputcurl: 'curl -d "d={{now().strftime("%Y%m%d")}}" -d "t={{now().strftime("%H:%M")}}" -d "v5={{states.sensor.outsidetemp.state|round(1)}}" -d "v2={{states.sensor.pv_totale_opwek.state|round(0)}}" -d "v4={{states.sensor.netto_verbruik_p1.state|round(0)}}" -H "X-Pvoutput-Apikey: [PUT_API_KEY_HERE]" -H "X-Pvoutput-SystemId: [PUT_SYSTEM_ID_HERE]" https://pvoutput.org/service/r2/addstatus.jsp'
